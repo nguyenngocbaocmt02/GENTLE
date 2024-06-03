@@ -1,0 +1,76 @@
+# @package _global_
+
+Dataset: lorenz
+nosave: True
+
+x_dim: 3
+y_dim: 3
+
+ens_size: 200
+
+# conditioning
+data:
+  dataset: type1
+  T: 4000
+  x_std: 0.01  # 0.01
+  y_std: 2  # 2
+  x_0_mean: torch.tensor([3., -3., 12.])
+  x_0_std: torch.ones(${x_dim})
+load: True
+
+y_cond: null
+x_cond_true: null
+
+# transfer
+transfer: False
+cond_final: False
+cond_final_model:
+  MODEL: EnKF
+  std_scale: 1.
+update_cond_final_ens: True
+
+
+adaptive_mean: False
+final_adaptive: True
+final_var_scale: 1.  # Only effective when cond_final is False and final_adaptive is True
+mean_final: torch.zeros(${x_dim})
+var_final: 1.*torch.ones(${x_dim})
+
+
+# device
+device: cpu
+num_workers: 0
+pin_memory: False
+
+# training
+use_prev_net: True
+mean_match: False
+ema: False
+ema_rate: 0.999
+grad_clipping: False
+grad_clip: 1.0
+npar: ${ens_size}
+batch_size: 500
+num_iter: 5000
+cache_npar: ${npar}
+n_ipf: 5
+lr: 0.0001
+
+# schedule
+num_steps: 100
+gamma_max: 0.05
+gamma_min: 0.001
+gamma_space: linspace
+weight_distrib: False
+weight_distrib_alpha: 100
+fast_sampling: True
+var_final_gamma_scale: True
+double_gamma_scale: False
+
+
+# logging
+plot_npar: 500
+test_npar: 500
+log_stride: 50
+gif_stride: ${num_iter}
+

@@ -1,0 +1,47 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - launcher: slurm_gpu
+  - test_job
+  - dataset: mnist_superres #celeba, 2d, stackedmnist
+  - model: SuperResUNET #Basic, UNET
+  - cond_final_model: BasicCond
+  - override hydra/launcher: submitit_slurm
+
+name: ${Dataset}_${data.dataset}
+run: 0
+nosave: False
+
+# logging
+LOGGER: CSV  # CSV, Wandb, NONE
+CSV_log_dir: ./
+
+# training
+optimizer: Adam
+cache_cpu: True
+test_batch_size: 100
+plot_level: 2
+mean_match: True
+paths:
+  experiments_dir_name: experiments
+  data_dir_name: data
+
+symmetric_gamma: False
+var_final_gamma_scale: False
+double_gamma_scale: True
+langevin_scale: torch.sqrt(gamma)
+loss_scale: 2*torch.sqrt(gamma)
+
+# checkpoint
+checkpoint_run: True
+checkpoint_it: 1
+checkpoint_pass: b  # b or f (skip b ipf run)
+checkpoint_iter: 0
+checkpoint_dir: null
+sample_checkpoint_f: null
+sample_checkpoint_b: ${checkpoint_dir}/
+checkpoint_f: null
+checkpoint_b: ${checkpoint_dir}/
+optimizer_checkpoint_f: null
+optimizer_checkpoint_b: ${checkpoint_dir}/

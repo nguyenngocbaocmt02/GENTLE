@@ -1,0 +1,11 @@
+name: gentle
+channels:
+  - conda-forge
+  - defaults
+  - nvidia
+dependencies:
+  - python=3.9
+  - cudatoolkit=11.3
+  - cudnn
+  - cudatoolkit-dev
+  - graph-tool

@@ -1,0 +1,59 @@
+# @package _global_
+
+# data 
+Dataset: stackedmnist
+data:
+  dataset: "superres_4"
+  image_size: 28
+  channels: 1
+y_cond: null
+x_cond_true: null
+
+
+# transfer
+transfer: False
+Dataset_transfer: mnist
+cond_final: False
+
+
+adaptive_mean: False
+final_adaptive: False
+mean_final: torch.zeros([${data.channels}, ${data.image_size}, ${data.image_size}])
+var_final: 1*torch.ones([${data.channels}, ${data.image_size}, ${data.image_size}])
+load: True
+
+# device
+device: cuda
+num_workers: 0
+pin_memory: True
+
+# logging
+log_stride: 100
+gif_stride: 10000
+plot_npar: 100
+test_npar: 10000
+
+# training
+cache_refresh_stride: 500
+cache_npar: 1600
+num_cache_batches: 2
+use_prev_net: True
+ema: True
+ema_rate: 0.999
+grad_clipping: True
+grad_clip: 1.0
+batch_size: 128
+num_iter: 5000
+n_ipf: 25
+lr: 0.0001
+
+# schedule
+num_steps: 20
+gamma_max: 0.1
+gamma_min: 0.00005
+gamma_space: linspace
+weight_distrib: True
+weight_distrib_alpha: 100
+fast_sampling: True
+
+
