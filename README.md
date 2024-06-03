@@ -18,6 +18,7 @@
 
 <a  href="https://nguyenngocbaocmt02.github.io/"  target="_blank">Bao&nbsp;Nguyen</a> &emsp; <b>&middot;</b> &emsp;
 <a  href="https://tbng.github.io/"  target="_blank">Binh&nbsp;Nguyen</a> &emsp; <b>&middot;</b> &emsp;
+<a  href="https://hieunt91.github.io/"  target="_blank">Hieu Trung&nbsp;Nguyen</a> &emsp; <b>&middot;</b> &emsp;
 <a  href="https://www.vietanhnguyen.net/"  target="_blank">Viet Anh&nbsp;Nguyen</a>
 <br>
 <a  href="https://www.vietanhnguyen.net/gentle.pdf">[Paper]</a> &emsp;&emsp;
