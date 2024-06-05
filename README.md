@@ -7,8 +7,8 @@
 <a  href="https://hieunt91.github.io/"  target="_blank">Hieu Trung&nbsp;Nguyen</a> &emsp; <b>&middot;</b> &emsp;
 <a  href="https://www.vietanhnguyen.net/"  target="_blank">Viet Anh&nbsp;Nguyen</a>
 <br>
-<a  href="https://arxiv.org/abs/2406.02317">[Paper]</a> &emsp;&emsp;
-
+<a  href="https://arxiv.org/abs/2406.02317">[Paper]</a> &emsp;&emsp; 
+<a  href="https://openreview.net/forum?id=FoRqdsN4IA">[OpenReview]</a> &emsp;&emsp;
 
 </div>
 
